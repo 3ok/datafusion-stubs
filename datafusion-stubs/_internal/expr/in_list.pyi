@@ -1,0 +1,9 @@
+from __future__ import annotations
+
+from datafusion._internal.expr import Expr
+from datafusion._internal.sql.logical import LogicalPlan
+
+class InList:
+    def expr(self) -> Expr: ...
+    def list(self) -> list[Expr]: ...
+    def negated(self) -> bool: ...
