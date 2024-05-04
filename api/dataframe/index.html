@@ -1,0 +1,3530 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../context/">
+      
+      
+        <link rel="next" href="../functions/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+    
+    
+      
+        <title>DataFrame - Apache DataFusion Experimental Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.66ac8b77.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dataframe" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Apache DataFusion Experimental Docs" class="md-header__button md-logo" aria-label="Apache DataFusion Experimental Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Apache DataFusion Experimental Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              DataFrame
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../context/" class="md-tabs__link">
+          
+  
+    
+  
+  API Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Apache DataFusion Experimental Docs" class="md-nav__button md-logo" aria-label="Apache DataFusion Experimental Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Apache DataFusion Experimental Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    API Reference
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            API Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../context/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Context
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    DataFrame
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    DataFrame
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#datafusion.DataFrame" class="md-nav__link">
+    <span class="md-ellipsis">
+      DataFrame
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DataFrame">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.__getitem__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __getitem__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.__repr__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __repr__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.aggregate" class="md-nav__link">
+    <span class="md-ellipsis">
+      aggregate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      cache
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.collect" class="md-nav__link">
+    <span class="md-ellipsis">
+      collect
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.collect_partitioned" class="md-nav__link">
+    <span class="md-ellipsis">
+      collect_partitioned
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.count" class="md-nav__link">
+    <span class="md-ellipsis">
+      count
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.describe" class="md-nav__link">
+    <span class="md-ellipsis">
+      describe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.distinct" class="md-nav__link">
+    <span class="md-ellipsis">
+      distinct
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.except_all" class="md-nav__link">
+    <span class="md-ellipsis">
+      except_all
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.execution_plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      execution_plan
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.explain" class="md-nav__link">
+    <span class="md-ellipsis">
+      explain
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      filter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.intersect" class="md-nav__link">
+    <span class="md-ellipsis">
+      intersect
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.join" class="md-nav__link">
+    <span class="md-ellipsis">
+      join
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.limit" class="md-nav__link">
+    <span class="md-ellipsis">
+      limit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.logical_plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      logical_plan
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.optimized_logical_plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      optimized_logical_plan
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.repartition" class="md-nav__link">
+    <span class="md-ellipsis">
+      repartition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.repartition_by_hash" class="md-nav__link">
+    <span class="md-ellipsis">
+      repartition_by_hash
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      schema
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.select" class="md-nav__link">
+    <span class="md-ellipsis">
+      select
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.select_columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      select_columns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.show" class="md-nav__link">
+    <span class="md-ellipsis">
+      show
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      sort
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.to_arrow_table" class="md-nav__link">
+    <span class="md-ellipsis">
+      to_arrow_table
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.to_pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      to_pandas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.to_polars" class="md-nav__link">
+    <span class="md-ellipsis">
+      to_polars
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.to_pydict" class="md-nav__link">
+    <span class="md-ellipsis">
+      to_pydict
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.to_pylist" class="md-nav__link">
+    <span class="md-ellipsis">
+      to_pylist
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.union" class="md-nav__link">
+    <span class="md-ellipsis">
+      union
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.union_distinct" class="md-nav__link">
+    <span class="md-ellipsis">
+      union_distinct
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.with_column" class="md-nav__link">
+    <span class="md-ellipsis">
+      with_column
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.with_column_renamed" class="md-nav__link">
+    <span class="md-ellipsis">
+      with_column_renamed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.write_csv" class="md-nav__link">
+    <span class="md-ellipsis">
+      write_csv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.write_json" class="md-nav__link">
+    <span class="md-ellipsis">
+      write_json
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.write_parquet" class="md-nav__link">
+    <span class="md-ellipsis">
+      write_parquet
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../common.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../substrait.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#datafusion.DataFrame" class="md-nav__link">
+    <span class="md-ellipsis">
+      DataFrame
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DataFrame">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.__getitem__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __getitem__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.__repr__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __repr__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.aggregate" class="md-nav__link">
+    <span class="md-ellipsis">
+      aggregate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      cache
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.collect" class="md-nav__link">
+    <span class="md-ellipsis">
+      collect
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.collect_partitioned" class="md-nav__link">
+    <span class="md-ellipsis">
+      collect_partitioned
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.count" class="md-nav__link">
+    <span class="md-ellipsis">
+      count
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.describe" class="md-nav__link">
+    <span class="md-ellipsis">
+      describe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.distinct" class="md-nav__link">
+    <span class="md-ellipsis">
+      distinct
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.except_all" class="md-nav__link">
+    <span class="md-ellipsis">
+      except_all
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.execution_plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      execution_plan
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.explain" class="md-nav__link">
+    <span class="md-ellipsis">
+      explain
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      filter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.intersect" class="md-nav__link">
+    <span class="md-ellipsis">
+      intersect
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.join" class="md-nav__link">
+    <span class="md-ellipsis">
+      join
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.limit" class="md-nav__link">
+    <span class="md-ellipsis">
+      limit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.logical_plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      logical_plan
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.optimized_logical_plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      optimized_logical_plan
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.repartition" class="md-nav__link">
+    <span class="md-ellipsis">
+      repartition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.repartition_by_hash" class="md-nav__link">
+    <span class="md-ellipsis">
+      repartition_by_hash
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      schema
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.select" class="md-nav__link">
+    <span class="md-ellipsis">
+      select
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.select_columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      select_columns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.show" class="md-nav__link">
+    <span class="md-ellipsis">
+      show
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      sort
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.to_arrow_table" class="md-nav__link">
+    <span class="md-ellipsis">
+      to_arrow_table
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.to_pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      to_pandas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.to_polars" class="md-nav__link">
+    <span class="md-ellipsis">
+      to_polars
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.to_pydict" class="md-nav__link">
+    <span class="md-ellipsis">
+      to_pydict
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.to_pylist" class="md-nav__link">
+    <span class="md-ellipsis">
+      to_pylist
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.union" class="md-nav__link">
+    <span class="md-ellipsis">
+      union
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.union_distinct" class="md-nav__link">
+    <span class="md-ellipsis">
+      union_distinct
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.with_column" class="md-nav__link">
+    <span class="md-ellipsis">
+      with_column
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.with_column_renamed" class="md-nav__link">
+    <span class="md-ellipsis">
+      with_column_renamed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.write_csv" class="md-nav__link">
+    <span class="md-ellipsis">
+      write_csv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.write_json" class="md-nav__link">
+    <span class="md-ellipsis">
+      write_json
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafusion.DataFrame.write_parquet" class="md-nav__link">
+    <span class="md-ellipsis">
+      write_parquet
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="dataframe">DataFrame</h1>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="datafusion.DataFrame" class="doc doc-heading">
+          <code>datafusion.DataFrame</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents first">
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<h3 id="datafusion.DataFrame-functions">Functions</h3>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.__getitem__" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="n">key</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return a new <code>DataFrame</code> with the specified column or columns.</p>
+
+
+
+  <p><span class="doc-section-title">Parameters:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td><code>key</code></td>
+          <td>
+                <code><span title="typing.Any">Any</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Column name or list of column names to select.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><span class="doc-section-title">Returns:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td>
+                <code><a class="autorefs autorefs-internal" title="datafusion._internal.dataframe.DataFrame" href="#datafusion.DataFrame">DataFrame</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>DataFrame with the specified column or columns.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.__repr__" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return a string representation of the DataFrame.</p>
+
+
+
+  <p><span class="doc-section-title">Returns:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>String representation of the DataFrame.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.aggregate" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">group_by</span><span class="p">,</span> <span class="n">aggs</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return a new <code>DataFrame</code> that aggregates the rows of the current DataFrame.</p>
+<p>First optionally grouping by the given expressions.</p>
+
+
+
+  <p><span class="doc-section-title">Parameters:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td><code>group_by</code></td>
+          <td>
+                <code>list[<span title="datafusion._internal.expr.Expr">Expr</span>]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>List of expressions to group by.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr class="doc-section-item">
+          <td><code>aggs</code></td>
+          <td>
+                <code>list[<span title="datafusion._internal.expr.Expr">Expr</span>]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>List of expressions to aggregate.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><span class="doc-section-title">Returns:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td>
+                <code><a class="autorefs autorefs-internal" title="datafusion._internal.dataframe.DataFrame" href="#datafusion.DataFrame">DataFrame</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>DataFrame after aggregation.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.cache" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Cache the DataFrame as a memory table.</p>
+
+
+
+  <p><span class="doc-section-title">Returns:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td>
+                <code><a class="autorefs autorefs-internal" title="datafusion._internal.dataframe.DataFrame" href="#datafusion.DataFrame">DataFrame</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Cached DataFrame.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.collect" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Execute this <code>DataFrame</code> and collect <code>pyarrow.RecordBatch</code>es into memory.</p>
+<p>Prior to calling <code>collect</code>, modifying a DataFrme simply updates a plan
+(no actual computation is performed). Calling <code>collect</code> triggers the
+computation.</p>
+
+
+
+  <p><span class="doc-section-title">Returns:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td>
+                <code>list[<span title="pyarrow.RecordBatch">RecordBatch</span>]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>List of <code>pyarrow.RecordBatch</code>es collected from the DataFrame.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.collect_partitioned" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">collect_partitioned</span><span class="p">()</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Execute this DataFrame and collect all results into a list of list of
+<code>pyarrow.RecordBatch</code>es maintaining the input partitioning.</p>
+
+
+
+  <p><span class="doc-section-title">Returns:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td>
+                <code>list[list[<span title="pyarrow.RecordBatch">RecordBatch</span>]]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>List of list of <code>pyarrow.RecordBatch</code>es collected from the DataFrame.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.count" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">count</span><span class="p">()</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return the total number of rows in this <code>DataFrame</code>.</p>
+<p>Note that this method will actually run a plan to calculate the
+count, which may be slow for large or complicated DataFrames.</p>
+
+
+
+  <p><span class="doc-section-title">Returns:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Number of rows in the DataFrame.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.describe" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return a new <code>DataFrame</code> that has statistics for a DataFrame.</p>
+<p>Only summarized numeric datatypes at the moments and returns nulls
+for non-numeric datatypes.</p>
+<p>The output format is modeled after pandas.</p>
+
+
+
+  <p><span class="doc-section-title">Returns:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td>
+                <code><a class="autorefs autorefs-internal" title="datafusion._internal.dataframe.DataFrame" href="#datafusion.DataFrame">DataFrame</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A summary DataFrame containing statistics.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.distinct" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return a new <code>DataFrame</code> with all duplicated rows removed.</p>
+
+
+
+  <p><span class="doc-section-title">Returns:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td>
+                <code><a class="autorefs autorefs-internal" title="datafusion._internal.dataframe.DataFrame" href="#datafusion.DataFrame">DataFrame</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>DataFrame after removing duplicates.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.except_all" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">except_all</span><span class="p">(</span><span class="n">py_df</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Calculate the exception of two <code>DataFrame</code>s.</p>
+<p>The two <code>DataFrame</code>s must have exactly the same schema.</p>
+
+
+
+  <p><span class="doc-section-title">Parameters:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td><code>py_df</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="datafusion._internal.dataframe.DataFrame" href="#datafusion.DataFrame">DataFrame</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>DataFrame to calculate exception with.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><span class="doc-section-title">Returns:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td>
+                <code><a class="autorefs autorefs-internal" title="datafusion._internal.dataframe.DataFrame" href="#datafusion.DataFrame">DataFrame</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>DataFrame after exception.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.execution_plan" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">execution_plan</span><span class="p">()</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return the execution/physical plan that comprises this <code>DataFrame</code>.</p>
+
+
+
+  <p><span class="doc-section-title">Returns:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td>
+                <code><span title="datafusion._internal.physical_plan.ExecutionPlan">ExecutionPlan</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Execution plan.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.explain" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">analyze</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return a DataFrame with the explanation of its plan so far.</p>
+<p>If <code>analyze</code> is specified, runs the plan and reports metrics.</p>
+
+
+
+  <p><span class="doc-section-title">Parameters:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td><code>verbose</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>If <code>True</code>, more details will be included, by default False</p>
+            </div>
+          </td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr class="doc-section-item">
+          <td><code>analyze</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>If <code>True</code>, the plan will run and metrics reported, by default False</p>
+            </div>
+          </td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><span class="doc-section-title">Returns:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td>
+                <code><a class="autorefs autorefs-internal" title="datafusion._internal.dataframe.DataFrame" href="#datafusion.DataFrame">DataFrame</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>DataFrame with the explanation of its plan.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.filter" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">predicate</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return a DataFrame for which <code>predicate</code> evaluates to <code>True</code>.</p>
+<p>Rows for which <code>predicate</code> evaluates to <code>False</code> or <code>None</code> are filtered out.</p>
+
+
+
+  <p><span class="doc-section-title">Parameters:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td><code>predicate</code></td>
+          <td>
+                <code><span title="datafusion._internal.expr.Expr">Expr</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Predicate expression to filter the DataFrame.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><span class="doc-section-title">Returns:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td>
+                <code><a class="autorefs autorefs-internal" title="datafusion._internal.dataframe.DataFrame" href="#datafusion.DataFrame">DataFrame</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>DataFrame after filtering.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.intersect" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">intersect</span><span class="p">(</span><span class="n">py_df</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Calculate the intersection of two <code>DataFrame</code>s.</p>
+<p>The two <code>DataFrame</code>s must have exactly the same schema.</p>
+
+
+
+  <p><span class="doc-section-title">Parameters:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td><code>py_df</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="datafusion._internal.dataframe.DataFrame" href="#datafusion.DataFrame">DataFrame</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>DataFrame to intersect with.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><span class="doc-section-title">Returns:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td>
+                <code><a class="autorefs autorefs-internal" title="datafusion._internal.dataframe.DataFrame" href="#datafusion.DataFrame">DataFrame</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>DataFrame after intersection.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.join" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="n">join_keys</span><span class="p">,</span> <span class="n">how</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Join this <code>DataFrame</code> with another <code>DataFrame</code>  using explicitly
+specified columns.</p>
+
+
+
+  <p><span class="doc-section-title">Parameters:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td><code>right</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="datafusion._internal.dataframe.DataFrame" href="#datafusion.DataFrame">DataFrame</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Other DataFrame to join with.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr class="doc-section-item">
+          <td><code>join_keys</code></td>
+          <td>
+                <code>tuple[list[str], list[str]]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Tuple of two lists of column names to join on.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr class="doc-section-item">
+          <td><code>how</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Type of join to perform. Supported types are "inner", "left", "right", "full", "semi", "anti".</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><span class="doc-section-title">Returns:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td>
+                <code><a class="autorefs autorefs-internal" title="datafusion._internal.dataframe.DataFrame" href="#datafusion.DataFrame">DataFrame</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>DataFrame after join.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.limit" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return a new <code>DataFrame</code> with a limited number of rows.</p>
+
+
+
+  <p><span class="doc-section-title">Parameters:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td><code>count</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Number of rows to limit the DataFrame to.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr class="doc-section-item">
+          <td><code>offset</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Number of rows to skip, by default 0</p>
+            </div>
+          </td>
+          <td>
+                <code>0</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><span class="doc-section-title">Returns:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td>
+                <code><a class="autorefs autorefs-internal" title="datafusion._internal.dataframe.DataFrame" href="#datafusion.DataFrame">DataFrame</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>DataFrame after limiting.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.logical_plan" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">logical_plan</span><span class="p">()</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return the unoptimized <code>LogicalPlan</code> that comprises this <code>DataFrame</code>.</p>
+
+
+
+  <p><span class="doc-section-title">Returns:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td>
+                <code><span title="datafusion._internal.sql.logical.LogicalPlan">LogicalPlan</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Unoptimized logical plan.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.optimized_logical_plan" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">optimized_logical_plan</span><span class="p">()</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return the optimized <code>LogicalPlan</code> that comprises this <code>DataFrame</code>.</p>
+
+
+
+  <p><span class="doc-section-title">Returns:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td>
+                <code><span title="datafusion._internal.sql.logical.LogicalPlan">LogicalPlan</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Optimized logical plan.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.repartition" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">repartition</span><span class="p">(</span><span class="n">num</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Repartition a DataFrame into <code>num</code> partitions.</p>
+<p>The batches allocation uses a round-robin algorithm.</p>
+
+
+
+  <p><span class="doc-section-title">Parameters:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td><code>num</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Number of partitions to repartition the DataFrame into.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><span class="doc-section-title">Returns:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td>
+                <code><a class="autorefs autorefs-internal" title="datafusion._internal.dataframe.DataFrame" href="#datafusion.DataFrame">DataFrame</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Repartitioned DataFrame.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.repartition_by_hash" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">repartition_by_hash</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Repartition a DataFrame into <code>num</code> partitions using a hash partitioning scheme.</p>
+
+
+
+  <p><span class="doc-section-title">Parameters:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td><code>num</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Number of partitions to repartition the DataFrame into.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><span class="doc-section-title">Returns:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td>
+                <code><a class="autorefs autorefs-internal" title="datafusion._internal.dataframe.DataFrame" href="#datafusion.DataFrame">DataFrame</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Repartitioned DataFrame.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.schema" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">schema</span><span class="p">()</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return the <code>pyarrow.Schema</code> describing the output of this DataFrame.</p>
+<p>The output schema contains information on the name, data type, and
+nullability for each column.</p>
+
+
+
+  <p><span class="doc-section-title">Returns:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td>
+                <code><span title="pyarrow.Schema">Schema</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Describing schema of the DataFrame</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.select" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Project arbitrary expressions (like SQL SELECT expressions) into a new <code>DataFrame</code>.</p>
+
+
+
+  <p><span class="doc-section-title">Returns:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td>
+                <code><a class="autorefs autorefs-internal" title="datafusion._internal.dataframe.DataFrame" href="#datafusion.DataFrame">DataFrame</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>DataFrame after projection. It has one column for each expression.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.select_columns" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">select_columns</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Filter the DataFrame by columns.</p>
+
+
+
+  <p><span class="doc-section-title">Returns:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td>
+                <code><a class="autorefs autorefs-internal" title="datafusion._internal.dataframe.DataFrame" href="#datafusion.DataFrame">DataFrame</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>DataFrame only containing the specified columns.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.show" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Execute the DataFrame and print the result to the console.</p>
+
+
+
+  <p><span class="doc-section-title">Parameters:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td><code>num</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Number of lines to show, by default 20</p>
+            </div>
+          </td>
+          <td>
+                <code>20</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.sort" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="o">*</span><span class="n">exprs</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Sort the DataFrame by the specified sorting expressions.</p>
+<p>Note that any expression can be turned into a sort expression by
+calling its <code>sort</code>  method.</p>
+
+
+
+  <p><span class="doc-section-title">Returns:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td>
+                <code><a class="autorefs autorefs-internal" title="datafusion._internal.dataframe.DataFrame" href="#datafusion.DataFrame">DataFrame</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>DataFrame after sorting.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.to_arrow_table" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">to_arrow_table</span><span class="p">()</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Execute the <code>DataFrame</code> and convert it into an Arrow Table.</p>
+
+
+
+  <p><span class="doc-section-title">Returns:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td>
+                <code><span title="pyarrow.Table">Table</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Arrow Table.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.to_pandas" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Execute the <code>DataFrame</code> and convert it into a Pandas DataFrame.</p>
+
+
+
+  <p><span class="doc-section-title">Returns:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td>
+                <code><span title="pandas.DataFrame">DataFrame</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Pandas DataFrame.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.to_polars" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">to_polars</span><span class="p">()</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Execute the <code>DataFrame</code> and convert it into a Polars DataFrame.</p>
+
+
+
+  <p><span class="doc-section-title">Returns:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td>
+                <code><span title="polars.DataFrame">DataFrame</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Polars DataFrame.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.to_pydict" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">to_pydict</span><span class="p">()</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Execute the <code>DataFrame</code> and convert it into a dictionary of lists.</p>
+
+
+
+  <p><span class="doc-section-title">Returns:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td>
+                <code>dict[str, list[<span title="typing.Any">Any</span>]]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Dictionary of lists.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.to_pylist" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">to_pylist</span><span class="p">()</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Execute the <code>DataFrame</code> and convert it into a list of dictionaries.</p>
+
+
+
+  <p><span class="doc-section-title">Returns:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td>
+                <code>list[dict[str, <span title="typing.Any">Any</span>]]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>List of dictionaries.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.union" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">py_df</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Calculate the union of two <code>DataFrame</code>s.</p>
+<p>The two <code>DataFrame</code>s must have exactly the same schema.</p>
+
+
+
+  <p><span class="doc-section-title">Parameters:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td><code>py_df</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="datafusion._internal.dataframe.DataFrame" href="#datafusion.DataFrame">DataFrame</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>DataFrame to union with.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr class="doc-section-item">
+          <td><code>distinct</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>If <code>True</code>, duplicate rows will be removed, by default False</p>
+            </div>
+          </td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><span class="doc-section-title">Returns:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td>
+                <code><a class="autorefs autorefs-internal" title="datafusion._internal.dataframe.DataFrame" href="#datafusion.DataFrame">DataFrame</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>DataFrame after union.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.union_distinct" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">union_distinct</span><span class="p">(</span><span class="n">py_df</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Calculate the distinct union of two <code>DataFrame</code>s.</p>
+<p>The two <code>DataFrame</code>s must have exactly the same schema.
+Any duplicate rows are discarded.</p>
+
+
+
+  <p><span class="doc-section-title">Parameters:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td><code>py_df</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="datafusion._internal.dataframe.DataFrame" href="#datafusion.DataFrame">DataFrame</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>DataFrame to union with.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><span class="doc-section-title">Returns:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td>
+                <code><a class="autorefs autorefs-internal" title="datafusion._internal.dataframe.DataFrame" href="#datafusion.DataFrame">DataFrame</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>DataFrame after union.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.with_column" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">expr</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Add an additional column to the DataFrame.</p>
+
+
+
+  <p><span class="doc-section-title">Parameters:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td><code>name</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Name of the column to add.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr class="doc-section-item">
+          <td><code>expr</code></td>
+          <td>
+                <code><span title="datafusion._internal.expr.Expr">Expr</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Expression to compute the column.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><span class="doc-section-title">Returns:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td>
+                <code><a class="autorefs autorefs-internal" title="datafusion._internal.dataframe.DataFrame" href="#datafusion.DataFrame">DataFrame</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>DataFrame with the new column.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.with_column_renamed" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">with_column_renamed</span><span class="p">(</span><span class="n">old_name</span><span class="p">,</span> <span class="n">new_name</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Rename one column by applying a new projection.</p>
+<p>This is a no-op if the column to be renamed does not exist.</p>
+<p>The method supports case sensitive rename with wrapping column name
+into one the following symbols (" or ' or `).</p>
+
+
+
+  <p><span class="doc-section-title">Parameters:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td><code>old_name</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Old column name.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr class="doc-section-item">
+          <td><code>new_name</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>New column name.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><span class="doc-section-title">Returns:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td>
+                <code><a class="autorefs autorefs-internal" title="datafusion._internal.dataframe.DataFrame" href="#datafusion.DataFrame">DataFrame</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>DataFrame with the column renamed.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.write_csv" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">write_csv</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Execute the <code>DataFrame</code>  and write the results to a CSV file.</p>
+
+
+
+  <p><span class="doc-section-title">Parameters:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td><code>path</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Path of the CSV file to write.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.write_json" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">write_json</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Execute the <code>DataFrame</code> and write the results to a JSON file.</p>
+
+
+
+  <p><span class="doc-section-title">Parameters:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td><code>path</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Path of the JSON file to write.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="datafusion.DataFrame.write_parquet" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">write_parquet</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="s1">&#39;uncompressed&#39;</span><span class="p">,</span> <span class="n">compression_level</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Execute the <code>DataFrame</code> and write the results to a Parquet file.</p>
+
+
+
+  <p><span class="doc-section-title">Parameters:</span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="doc-section-item">
+          <td><code>path</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Path of the Parquet file to write.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr class="doc-section-item">
+          <td><code>compression</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Compression type to use, by default "uncompressed"</p>
+            </div>
+          </td>
+          <td>
+                <code>&#39;uncompressed&#39;</code>
+          </td>
+        </tr>
+        <tr class="doc-section-item">
+          <td><code>compression_level</code></td>
+          <td>
+                <code>int | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Compression level to use, by default None</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../context/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Context">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Context
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../functions/" class="md-footer__link md-footer__link--next" aria-label="Next: Functions">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Functions
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.instant", "navigation.expand", "navigation.tabs", "navigation.indexes", "navigation.tabs.sticky", "navigation.footer", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      
+    
+  </body>
+</html>
