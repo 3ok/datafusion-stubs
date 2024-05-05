@@ -12,17 +12,22 @@
         <link rel="prev" href="../context/">
       
       
+        <link rel="next" href="../substrait/">
+      
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
     
     
       
-        <title>DataFrame - Apache DataFusion Experimental Docs</title>
+        <title>DataFrame - Apache DataFusion Python Experimental Docs</title>
       
     
     
       <link rel="stylesheet" href="../../assets/stylesheets/main.66ac8b77.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -53,7 +58,12 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -78,7 +88,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Apache DataFusion Experimental Docs" class="md-header__button md-logo" aria-label="Apache DataFusion Experimental Docs" data-md-component="logo">
+    <a href="../.." title="Apache DataFusion Python Experimental Docs" class="md-header__button md-logo" aria-label="Apache DataFusion Python Experimental Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -92,7 +102,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Apache DataFusion Experimental Docs
+            Apache DataFusion Python Experimental Docs
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -105,10 +115,47 @@
       </div>
     </div>
     
+      
     
-      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
     
     
   </nav>
@@ -129,7 +176,7 @@
   
     
   
-  Home
+  Getting Started
 
       </a>
     </li>
@@ -186,13 +233,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Apache DataFusion Experimental Docs" class="md-nav__button md-logo" aria-label="Apache DataFusion Experimental Docs" data-md-component="logo">
+    <a href="../.." title="Apache DataFusion Python Experimental Docs" class="md-nav__button md-logo" aria-label="Apache DataFusion Python Experimental Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
-    Apache DataFusion Experimental Docs
+    Apache DataFusion Python Experimental Docs
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -208,7 +255,7 @@
         
   
   <span class="md-ellipsis">
-    Home
+    Getting Started
   </span>
   
 
@@ -227,6 +274,8 @@
   
     
     
+      
+        
       
         
       
@@ -711,6 +760,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../substrait/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Substrait
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1130,7 +1200,7 @@
 
 
 <h2 id="datafusion.DataFrame" class="doc doc-heading">
-          <code>datafusion.DataFrame</code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>          <code>datafusion.DataFrame</code>
 
 
 </h2>
@@ -1158,7 +1228,7 @@
 
 
 <h4 id="datafusion.DataFrame.__getitem__" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="n">key</span><span class="p">)</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="n">key</span><span class="p">)</span></code>
 
 </h4>
 
@@ -1183,7 +1253,7 @@
         <tr class="doc-section-item">
           <td><code>key</code></td>
           <td>
-                <code><span title="typing.Any">Any</span></code>
+                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -1231,7 +1301,7 @@
 
 
 <h4 id="datafusion.DataFrame.__repr__" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span></code>
 
 </h4>
 
@@ -1253,7 +1323,7 @@
     <tbody>
         <tr class="doc-section-item">
           <td>
-                <code>str</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -1274,7 +1344,7 @@
 
 
 <h4 id="datafusion.DataFrame.aggregate" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">group_by</span><span class="p">,</span> <span class="n">aggs</span><span class="p">)</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">group_by</span><span class="p">,</span> <span class="n">aggs</span><span class="p">)</span></code>
 
 </h4>
 
@@ -1300,7 +1370,7 @@
         <tr class="doc-section-item">
           <td><code>group_by</code></td>
           <td>
-                <code>list[<span title="datafusion._internal.expr.Expr">Expr</span>]</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<span title="datafusion._internal.expr.Expr">Expr</span>]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -1314,7 +1384,7 @@
         <tr class="doc-section-item">
           <td><code>aggs</code></td>
           <td>
-                <code>list[<span title="datafusion._internal.expr.Expr">Expr</span>]</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<span title="datafusion._internal.expr.Expr">Expr</span>]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -1362,7 +1432,7 @@
 
 
 <h4 id="datafusion.DataFrame.cache" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span></code>
 
 </h4>
 
@@ -1405,7 +1475,7 @@
 
 
 <h4 id="datafusion.DataFrame.collect" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span></code>
 
 </h4>
 
@@ -1430,7 +1500,7 @@ computation.</p>
     <tbody>
         <tr class="doc-section-item">
           <td>
-                <code>list[<span title="pyarrow.RecordBatch">RecordBatch</span>]</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a class="autorefs autorefs-external" title="pyarrow.RecordBatch" href="https://arrow.apache.org/docs/python/generated/pyarrow.RecordBatch.html#pyarrow.RecordBatch">RecordBatch</a>]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -1451,7 +1521,7 @@ computation.</p>
 
 
 <h4 id="datafusion.DataFrame.collect_partitioned" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">collect_partitioned</span><span class="p">()</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">collect_partitioned</span><span class="p">()</span></code>
 
 </h4>
 
@@ -1474,7 +1544,7 @@ computation.</p>
     <tbody>
         <tr class="doc-section-item">
           <td>
-                <code>list[list[<span title="pyarrow.RecordBatch">RecordBatch</span>]]</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a class="autorefs autorefs-external" title="pyarrow.RecordBatch" href="https://arrow.apache.org/docs/python/generated/pyarrow.RecordBatch.html#pyarrow.RecordBatch">RecordBatch</a>]]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -1495,7 +1565,7 @@ computation.</p>
 
 
 <h4 id="datafusion.DataFrame.count" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">count</span><span class="p">()</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">count</span><span class="p">()</span></code>
 
 </h4>
 
@@ -1519,7 +1589,7 @@ count, which may be slow for large or complicated DataFrames.</p>
     <tbody>
         <tr class="doc-section-item">
           <td>
-                <code>int</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -1540,7 +1610,7 @@ count, which may be slow for large or complicated DataFrames.</p>
 
 
 <h4 id="datafusion.DataFrame.describe" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span></code>
 
 </h4>
 
@@ -1586,7 +1656,7 @@ for non-numeric datatypes.</p>
 
 
 <h4 id="datafusion.DataFrame.distinct" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span></code>
 
 </h4>
 
@@ -1629,7 +1699,7 @@ for non-numeric datatypes.</p>
 
 
 <h4 id="datafusion.DataFrame.except_all" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">except_all</span><span class="p">(</span><span class="n">py_df</span><span class="p">)</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">except_all</span><span class="p">(</span><span class="n">py_df</span><span class="p">)</span></code>
 
 </h4>
 
@@ -1703,7 +1773,7 @@ for non-numeric datatypes.</p>
 
 
 <h4 id="datafusion.DataFrame.execution_plan" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">execution_plan</span><span class="p">()</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">execution_plan</span><span class="p">()</span></code>
 
 </h4>
 
@@ -1746,7 +1816,7 @@ for non-numeric datatypes.</p>
 
 
 <h4 id="datafusion.DataFrame.explain" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">analyze</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">analyze</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
 </h4>
 
@@ -1772,7 +1842,7 @@ for non-numeric datatypes.</p>
         <tr class="doc-section-item">
           <td><code>verbose</code></td>
           <td>
-                <code>bool</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -1786,7 +1856,7 @@ for non-numeric datatypes.</p>
         <tr class="doc-section-item">
           <td><code>analyze</code></td>
           <td>
-                <code>bool</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -1834,7 +1904,7 @@ for non-numeric datatypes.</p>
 
 
 <h4 id="datafusion.DataFrame.filter" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">predicate</span><span class="p">)</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">predicate</span><span class="p">)</span></code>
 
 </h4>
 
@@ -1908,7 +1978,7 @@ for non-numeric datatypes.</p>
 
 
 <h4 id="datafusion.DataFrame.intersect" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">intersect</span><span class="p">(</span><span class="n">py_df</span><span class="p">)</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">intersect</span><span class="p">(</span><span class="n">py_df</span><span class="p">)</span></code>
 
 </h4>
 
@@ -1982,7 +2052,7 @@ for non-numeric datatypes.</p>
 
 
 <h4 id="datafusion.DataFrame.join" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="n">join_keys</span><span class="p">,</span> <span class="n">how</span><span class="p">)</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="n">join_keys</span><span class="p">,</span> <span class="n">how</span><span class="p">)</span></code>
 
 </h4>
 
@@ -2022,7 +2092,7 @@ specified columns.</p>
         <tr class="doc-section-item">
           <td><code>join_keys</code></td>
           <td>
-                <code>tuple[list[str], list[str]]</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>], <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2036,7 +2106,7 @@ specified columns.</p>
         <tr class="doc-section-item">
           <td><code>how</code></td>
           <td>
-                <code>str</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2084,7 +2154,7 @@ specified columns.</p>
 
 
 <h4 id="datafusion.DataFrame.limit" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span></code>
 
 </h4>
 
@@ -2109,7 +2179,7 @@ specified columns.</p>
         <tr class="doc-section-item">
           <td><code>count</code></td>
           <td>
-                <code>int</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2123,7 +2193,7 @@ specified columns.</p>
         <tr class="doc-section-item">
           <td><code>offset</code></td>
           <td>
-                <code>int</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2171,7 +2241,7 @@ specified columns.</p>
 
 
 <h4 id="datafusion.DataFrame.logical_plan" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">logical_plan</span><span class="p">()</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">logical_plan</span><span class="p">()</span></code>
 
 </h4>
 
@@ -2214,7 +2284,7 @@ specified columns.</p>
 
 
 <h4 id="datafusion.DataFrame.optimized_logical_plan" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">optimized_logical_plan</span><span class="p">()</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">optimized_logical_plan</span><span class="p">()</span></code>
 
 </h4>
 
@@ -2257,7 +2327,7 @@ specified columns.</p>
 
 
 <h4 id="datafusion.DataFrame.repartition" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">repartition</span><span class="p">(</span><span class="n">num</span><span class="p">)</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">repartition</span><span class="p">(</span><span class="n">num</span><span class="p">)</span></code>
 
 </h4>
 
@@ -2283,7 +2353,7 @@ specified columns.</p>
         <tr class="doc-section-item">
           <td><code>num</code></td>
           <td>
-                <code>int</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2331,7 +2401,7 @@ specified columns.</p>
 
 
 <h4 id="datafusion.DataFrame.repartition_by_hash" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">repartition_by_hash</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">repartition_by_hash</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span></code>
 
 </h4>
 
@@ -2356,7 +2426,7 @@ specified columns.</p>
         <tr class="doc-section-item">
           <td><code>num</code></td>
           <td>
-                <code>int</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2404,7 +2474,7 @@ specified columns.</p>
 
 
 <h4 id="datafusion.DataFrame.schema" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">schema</span><span class="p">()</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">schema</span><span class="p">()</span></code>
 
 </h4>
 
@@ -2428,7 +2498,7 @@ nullability for each column.</p>
     <tbody>
         <tr class="doc-section-item">
           <td>
-                <code><span title="pyarrow.Schema">Schema</span></code>
+                <code><a class="autorefs autorefs-external" title="pyarrow.Schema" href="https://arrow.apache.org/docs/python/generated/pyarrow.Schema.html#pyarrow.Schema">Schema</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2449,7 +2519,7 @@ nullability for each column.</p>
 
 
 <h4 id="datafusion.DataFrame.select" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span></code>
 
 </h4>
 
@@ -2492,7 +2562,7 @@ nullability for each column.</p>
 
 
 <h4 id="datafusion.DataFrame.select_columns" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">select_columns</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">select_columns</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span></code>
 
 </h4>
 
@@ -2535,7 +2605,7 @@ nullability for each column.</p>
 
 
 <h4 id="datafusion.DataFrame.show" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span></code>
 
 </h4>
 
@@ -2560,7 +2630,7 @@ nullability for each column.</p>
         <tr class="doc-section-item">
           <td><code>num</code></td>
           <td>
-                <code>int</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2584,7 +2654,7 @@ nullability for each column.</p>
 
 
 <h4 id="datafusion.DataFrame.sort" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="o">*</span><span class="n">exprs</span><span class="p">)</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="o">*</span><span class="n">exprs</span><span class="p">)</span></code>
 
 </h4>
 
@@ -2629,7 +2699,7 @@ calling its <code>sort</code>  method.</p>
 
 
 <h4 id="datafusion.DataFrame.to_arrow_table" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">to_arrow_table</span><span class="p">()</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">to_arrow_table</span><span class="p">()</span></code>
 
 </h4>
 
@@ -2651,7 +2721,7 @@ calling its <code>sort</code>  method.</p>
     <tbody>
         <tr class="doc-section-item">
           <td>
-                <code><span title="pyarrow.Table">Table</span></code>
+                <code><a class="autorefs autorefs-external" title="pyarrow.Table" href="https://arrow.apache.org/docs/python/generated/pyarrow.Table.html#pyarrow.Table">Table</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2672,7 +2742,7 @@ calling its <code>sort</code>  method.</p>
 
 
 <h4 id="datafusion.DataFrame.to_pandas" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span></code>
 
 </h4>
 
@@ -2694,7 +2764,7 @@ calling its <code>sort</code>  method.</p>
     <tbody>
         <tr class="doc-section-item">
           <td>
-                <code><span title="pandas.DataFrame">DataFrame</span></code>
+                <code><a class="autorefs autorefs-external" title="pandas.DataFrame" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html#pandas.DataFrame">DataFrame</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2715,7 +2785,7 @@ calling its <code>sort</code>  method.</p>
 
 
 <h4 id="datafusion.DataFrame.to_polars" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">to_polars</span><span class="p">()</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">to_polars</span><span class="p">()</span></code>
 
 </h4>
 
@@ -2758,7 +2828,7 @@ calling its <code>sort</code>  method.</p>
 
 
 <h4 id="datafusion.DataFrame.to_pydict" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">to_pydict</span><span class="p">()</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">to_pydict</span><span class="p">()</span></code>
 
 </h4>
 
@@ -2780,7 +2850,7 @@ calling its <code>sort</code>  method.</p>
     <tbody>
         <tr class="doc-section-item">
           <td>
-                <code>dict[str, list[<span title="typing.Any">Any</span>]]</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2801,7 +2871,7 @@ calling its <code>sort</code>  method.</p>
 
 
 <h4 id="datafusion.DataFrame.to_pylist" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">to_pylist</span><span class="p">()</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">to_pylist</span><span class="p">()</span></code>
 
 </h4>
 
@@ -2823,7 +2893,7 @@ calling its <code>sort</code>  method.</p>
     <tbody>
         <tr class="doc-section-item">
           <td>
-                <code>list[dict[str, <span title="typing.Any">Any</span>]]</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2844,7 +2914,7 @@ calling its <code>sort</code>  method.</p>
 
 
 <h4 id="datafusion.DataFrame.union" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">py_df</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">py_df</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
 </h4>
 
@@ -2884,7 +2954,7 @@ calling its <code>sort</code>  method.</p>
         <tr class="doc-section-item">
           <td><code>distinct</code></td>
           <td>
-                <code>bool</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2932,7 +3002,7 @@ calling its <code>sort</code>  method.</p>
 
 
 <h4 id="datafusion.DataFrame.union_distinct" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">union_distinct</span><span class="p">(</span><span class="n">py_df</span><span class="p">)</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">union_distinct</span><span class="p">(</span><span class="n">py_df</span><span class="p">)</span></code>
 
 </h4>
 
@@ -3007,7 +3077,7 @@ Any duplicate rows are discarded.</p>
 
 
 <h4 id="datafusion.DataFrame.with_column" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">expr</span><span class="p">)</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">expr</span><span class="p">)</span></code>
 
 </h4>
 
@@ -3032,7 +3102,7 @@ Any duplicate rows are discarded.</p>
         <tr class="doc-section-item">
           <td><code>name</code></td>
           <td>
-                <code>str</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3094,7 +3164,7 @@ Any duplicate rows are discarded.</p>
 
 
 <h4 id="datafusion.DataFrame.with_column_renamed" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">with_column_renamed</span><span class="p">(</span><span class="n">old_name</span><span class="p">,</span> <span class="n">new_name</span><span class="p">)</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">with_column_renamed</span><span class="p">(</span><span class="n">old_name</span><span class="p">,</span> <span class="n">new_name</span><span class="p">)</span></code>
 
 </h4>
 
@@ -3122,7 +3192,7 @@ into one the following symbols (" or ' or `).</p>
         <tr class="doc-section-item">
           <td><code>old_name</code></td>
           <td>
-                <code>str</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3136,7 +3206,7 @@ into one the following symbols (" or ' or `).</p>
         <tr class="doc-section-item">
           <td><code>new_name</code></td>
           <td>
-                <code>str</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3184,7 +3254,7 @@ into one the following symbols (" or ' or `).</p>
 
 
 <h4 id="datafusion.DataFrame.write_csv" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">write_csv</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">write_csv</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></code>
 
 </h4>
 
@@ -3209,7 +3279,7 @@ into one the following symbols (" or ' or `).</p>
         <tr class="doc-section-item">
           <td><code>path</code></td>
           <td>
-                <code>str</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3233,7 +3303,7 @@ into one the following symbols (" or ' or `).</p>
 
 
 <h4 id="datafusion.DataFrame.write_json" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">write_json</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">write_json</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></code>
 
 </h4>
 
@@ -3258,7 +3328,7 @@ into one the following symbols (" or ' or `).</p>
         <tr class="doc-section-item">
           <td><code>path</code></td>
           <td>
-                <code>str</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3282,7 +3352,7 @@ into one the following symbols (" or ' or `).</p>
 
 
 <h4 id="datafusion.DataFrame.write_parquet" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">write_parquet</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="s1">&#39;uncompressed&#39;</span><span class="p">,</span> <span class="n">compression_level</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">datafusion</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">write_parquet</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="s1">&#39;uncompressed&#39;</span><span class="p">,</span> <span class="n">compression_level</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h4>
 
@@ -3307,7 +3377,7 @@ into one the following symbols (" or ' or `).</p>
         <tr class="doc-section-item">
           <td><code>path</code></td>
           <td>
-                <code>str</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3321,7 +3391,7 @@ into one the following symbols (" or ' or `).</p>
         <tr class="doc-section-item">
           <td><code>compression</code></td>
           <td>
-                <code>str</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3335,7 +3405,7 @@ into one the following symbols (" or ' or `).</p>
         <tr class="doc-section-item">
           <td><code>compression_level</code></td>
           <td>
-                <code>int | None</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a> | None</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3407,6 +3477,22 @@ into one the following symbols (" or ' or `).</p>
             </div>
           </a>
         
+        
+          
+          <a href="../substrait/" class="md-footer__link md-footer__link--next" aria-label="Next: Substrait">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Substrait
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
         
       </nav>
     
